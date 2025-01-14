@@ -10,16 +10,10 @@ func hyphen(uuid string) string {
 // │ ┌ ┐ └ ┘ ─ ┤ ├
 
 func printInfo(profile *Profile) {
-
-	uuid := hyphen(profile.UUID)
-
 	m := map[string]string{
-		"Username": profile.Name,
-		"UUID":     uuid,
-		"NameMC":   "https://namemc.com/profile/" + profile.Name,
-		"Laby":     "https://laby.net/@" + profile.Name,
-		"Skin":     "https://minotar.net/skin/" + profile.Name,
-		"Head":     "https://crafatar.com/avatars/" + profile.UUID,
+		"Track":  profile.Track.Name,
+		"Artist": profile.Track.Artist.Name,
+		"URL":    profile.Track.Url,
 	}
 	prettyPrint(m)
 
