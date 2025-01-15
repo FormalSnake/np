@@ -10,3 +10,6 @@
 
 ## Usage
 `np <username>`
+
+## note
+I based this on [mcl](https://github.com/Sophed/mcl)
