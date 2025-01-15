@@ -2,12 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"image"
 	"io"
 	"net/http"
 	"os"
-
-	"github.com/dolmen-go/kittyimg"
 )
 
 type Profile struct {
@@ -44,13 +41,6 @@ func main() {
 	}
 
 	printInfo(profile)
-	img := getImage(profile.Track.Image[0].Url)
-	if img == nil {
-		println("Image not found")
-		return
-	}
-	kittyimg.Fprintln(os.Stdout, img)
-
 }
 
 func getProfile(query string) *Profile {
@@ -66,17 +56,4 @@ func getProfile(query string) *Profile {
 	json.Unmarshal(body, &profile)
 	return &profile
 
-}
-
-func getImage(url string) image.Image {
-	res, err := http.Get(url)
-	if err != nil {
-		return nil
-	}
-	defer res.Body.Close()
-	img, _, err := image.Decode(res.Body)
-	if err != nil {
-		return nil
-	}
-	return img
 }

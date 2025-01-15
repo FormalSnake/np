@@ -27,7 +27,7 @@ func line(n int) string {
 	return s
 }
 
-const padding = 1
+const padding = 4
 
 func prettyPrint(m map[string]string) {
 	longestK := 0
