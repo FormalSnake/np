@@ -1,6 +1,6 @@
 # Now Playing
 
-![image](https://github.com/FormalSnake/np/blob/main/asset/ss.png)
+![image](https://raw.githubusercontent.com/FormalSnake/np/main/asset/ss.png)
 
 ## Installation
 1. Download and install the [latest release of Go](https://go.dev/dl/)
